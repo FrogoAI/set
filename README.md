@@ -18,7 +18,6 @@ This repository provides two common set implementations: a standard unordered se
 
 ## 🚀 Installation
 
-Bash
 
 ```
 go get github.com/your-username/go-generic-set
@@ -71,7 +70,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/your-username/go-generic-set/set"
+	"github.com/FrogoAI/set"
 )
 
 func main() {
