@@ -199,3 +199,23 @@ func TestGenericDataSet_Union(t *testing.T) {
 		})
 	}
 }
+
+func TestUnion(t *testing.T) {
+	set1 := NewGenericDataSet("a", "b", "c")
+	set2 := NewGenericDataSet("c", "d", "e")
+
+	result := set1.Union(set2)
+	if !reflect.DeepEqual(result, NewGenericDataSet("a", "b", "c", "d", "e")) {
+		t.Fatalf("Unexpected result %v != %v", result, set1)
+	}
+}
+
+func TestIntersection(t *testing.T) {
+	set1 := NewGenericDataSet("a", "b", "c")
+	set2 := NewGenericDataSet("c", "d", "e")
+
+	result := set1.Intersection(set2)
+	if !reflect.DeepEqual(result, NewGenericDataSet("c")) {
+		t.Fatalf("Unexpected result %v != %v", result, set1)
+	}
+}
