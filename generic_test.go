@@ -192,8 +192,8 @@ func TestGenericDataSet_Union(t *testing.T) {
 	}
 	for _, tc := range tt {
 		t.Run(tc.name, func(t *testing.T) {
-			tc.set.Union(tc.u)
-			if !reflect.DeepEqual(tc.set, tc.want) {
+			res := tc.set.Union(tc.u)
+			if !reflect.DeepEqual(res, tc.want) {
 				t.Fatalf("Unexpected result %v != %v", tc.set, tc.want)
 			}
 		})
